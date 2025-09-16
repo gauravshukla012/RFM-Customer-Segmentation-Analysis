@@ -1,43 +1,38 @@
 # RFM Customer Segmentation Analysis
 
-![Dashboard Screenshot](dashboard/rfm_dashboard.png)
 
-## 🎯 Project Summary
 
-This project performs an end-to-end RFM (Recency, Frequency, Monetary) analysis to segment customers of a UK-based online retailer. The goal was to identify key customer groups to enable targeted and effective marketing strategies. The analysis revealed a critical and unexpected insight: the company's historically highest-spending customer segment is now almost entirely inactive, representing a major revenue risk.
+## Project Overview
 
----
-
-## 📊 Power BI Dashboard
-
-An interactive dashboard was created to visualize the customer segments.
-
-**[➡️ View the Interactive Dashboard Here](https://your-public-powerbi-link-here)** *(if you published it)*
+This project analyzes over one million transaction records from a UK-based online retailer to segment customers using the RFM (Recency, Frequency, Monetary) model. The analysis, conducted with SQL and visualized in Power BI, identified a critical business risk: the company's historically highest-spending customer segment is now largely inactive.
 
 ---
 
-## 💡 Key Insights & Recommendations
+## Key Business Insights
 
-### Insights
-* **Highest-Value Segment is Inactive**: The 'Lost Customers' segment, comprising 2,515 customers, has historically generated the most revenue at over **$12.1M**.
-* **Major Churn Risk**: This indicates that the most valuable customer base has churned, posing a significant risk to future revenue.
-* **High-Potential Segments**: The 'Champions' and 'Loyal Customers' segments, while smaller, are currently the most active high-value groups and represent the new core of the business.
-
-### Recommendations
-1.  **Urgent Reactivation Campaign**: Immediately launch a targeted win-back campaign for the 'Lost Customers' segment. Investigate the root causes of this churn.
-2.  **Nurture and Reward Champions**: Implement a loyalty program for the 'Champions' and 'Loyal Customers' to retain and grow this new high-value base.
-3.  **Onboard Recent Customers**: Develop an onboarding strategy for 'Recent Customers' to increase their frequency and monetary value, converting them into future loyal customers.
+* **Revenue Concentration Risk**: The 'Lost Customers' segment, while inactive, accounts for the highest historical revenue at over **$12.1M**. This indicates a significant churn of high-value customers.
+* **Disproportionate Value**: The active 'Champions' segment, representing only 13% of the customer base, generates the second-highest revenue (**$4.9M**), highlighting their critical importance to current business health.
+* **High-Value Churn**: The 'At-Risk Champions' segment represents a group of formerly high-frequency, high-spending customers who are now lapsing, signaling a clear opportunity for proactive retention efforts.
 
 ---
 
-## 🛠️ Technical Workflow
+## Strategic Recommendations
 
-1.  **Database & ETL**: Loaded a 1M+ row dataset into a **MySQL** database using the `LOAD DATA INFILE` command for efficiency.
-2.  **Data Cleaning**: Created a reusable `VIEW` in SQL to filter out cancelled orders, invalid entries, and records without a `CustomerID`.
-3.  **RFM Analysis**: Wrote SQL queries using aggregate functions and `DATEDIFF` to calculate Recency, Frequency, and Monetary values for each customer.
-4.  **Segmentation**: Used `NTILE` to score customers and a `CASE` statement to assign them to meaningful segments (e.g., Champions, At-Risk, Lost).
-5.  **Visualization**: Connected **Power BI** to the MySQL database and built a dashboard to visualize the size and value of each customer segment, leading to the key insights.
+1.  **Prioritize High-Value Customer Reactivation**: Launch a targeted marketing campaign to re-engage the 'Lost Customers' segment, focusing on understanding the causes of churn and providing compelling incentives to return.
+2.  **Implement a Loyalty Program**: Nurture and retain the 'Champions' and 'Loyal Customers' segments with a premium loyalty program to solidify their value and encourage continued engagement.
+3.  **Develop Customer Onboarding**: Create an automated onboarding process for 'Recent Customers' to increase their purchase frequency and guide them towards becoming long-term loyal customers.
 
 ---
 
-## 📁 Repository Structure
+## Technical Workflow
+
+The project was executed using the following end-to-end process:
+
+1.  **Data Ingestion & Storage**: A dataset of over 1 million rows was efficiently loaded into a **MySQL** database.
+2.  **Data Cleaning & Preparation**: Data was cleaned and prepared in SQL, filtering for active sales and valid customer records. This cleaned data was stored in a reusable `VIEW` for analysis.
+3.  **RFM Modeling**: The Recency, Frequency, and Monetary metrics were calculated for each customer using SQL aggregate functions and `DATEDIFF`. Customers were then scored and segmented using `NTILE` and `CASE` statements.
+4.  **Visualization**: The final segmented data was connected to **Power BI** to build an interactive dashboard, enabling the visualization of segment size, value, and key characteristics.
+
+---
+
+## Repository Structure
