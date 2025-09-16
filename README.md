@@ -36,3 +36,10 @@ The project was executed using the following end-to-end process:
 ---
 
 ## Repository Structure
+├── dashboard/      # Contains the Power BI dashboard screenshot
+
+├── sql_scripts/    # Holds all SQL scripts for cleaning and analysis
+
+├── data/           # Contains a small sample of the original dataset
+
+└── README.md       # Project summary and analysis report
